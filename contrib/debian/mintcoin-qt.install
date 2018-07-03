@@ -1,0 +1,5 @@
+mundocoin-qt usr/bin
+share/pixmaps/bitcoin32.xpm usr/share/pixmaps
+share/pixmaps/bitcoin80.xpm usr/share/pixmaps
+debian/mundocoin-qt.desktop usr/share/applications
+debian/mundocoin-qt.protocol usr/share/kde4/services/

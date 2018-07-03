@@ -1,0 +1,13 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Mundocoin
+Comment=Mundocoin P2P Cryptocurrency
+Comment[fr]=Mundocoin, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=Mundocoin, eşten eşe kriptografik sanal para birimi
+Comment[es]=Mundocoin, una criptomoneda P2P
+Exec=/usr/bin/mundocoin-qt
+Terminal=false
+Type=Application
+Icon=/usr/share/pixmaps/bitcoin80.xpm
+MimeType=x-scheme-handler/mundocoin;
+Categories=Office;

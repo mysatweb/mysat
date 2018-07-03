@@ -1,0 +1,2 @@
+debian/bin/mundocoind usr/bin
+src/mundocoind usr/lib/mundocoin
