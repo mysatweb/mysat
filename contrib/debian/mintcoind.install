@@ -1,2 +1,2 @@
-debian/bin/mundocoind usr/bin
-src/mundocoind usr/lib/mundocoin
+debian/bin/mysatd usr/bin
+src/mysatd usr/lib/mysat

@@ -4,13 +4,13 @@ set -e
 
 umask 077
 
-basedir=~/.mundocoin
+basedir=~/.mysat
 dbfile="$basedir/DB_CONFIG"
-cfgfile="$basedir/mundocoin.conf"
+cfgfile="$basedir/mysat.conf"
 
 [ -e "$basedir" ] || mkdir "$basedir"
 
-# mundocoin does not clean up DB log files by default
+# mysat does not clean up DB log files by default
 [ -e "$dbfile" ] || echo 'set_flags DB_LOG_AUTOREMOVE' > "$dbfile"
 
-exec /usr/lib/mundocoin/mundocoin-qt "$@"
+exec /usr/lib/mysat/mysat-qt "$@"

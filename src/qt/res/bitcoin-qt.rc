@@ -1,4 +1,4 @@
-IDI_ICON1 ICON DISCARDABLE "icons/Mundocoin.ico"
+IDI_ICON1 ICON DISCARDABLE "icons/mySAT.ico"
 
 #include <windows.h>             // needed for VERSIONINFO
 #include "../../clientversion.h" // holds the needed client version information
@@ -18,14 +18,14 @@ BEGIN
     BEGIN
         BLOCK "040904E4" // U.S. English - multilingual (hex)
         BEGIN
-            VALUE "CompanyName",        "Mundocoin"
-            VALUE "FileDescription",    "Mundocoin-Qt (OSS GUI client for Mundocoin)"
+            VALUE "CompanyName",        "mySAT"
+            VALUE "FileDescription",    "mySAT-Qt (OSS GUI client for mySAT)"
             VALUE "FileVersion",        VER_FILEVERSION_STR
-            VALUE "InternalName",       "Mundocoin-qt"
-            VALUE "LegalCopyright",     "2009-2012 The Bitcoin developers, 2012-2013 The Mundocoin & PPCoin developers"
+            VALUE "InternalName",       "mySAT-qt"
+            VALUE "LegalCopyright",     "2009-2012 The Bitcoin developers, 2012-2013 The mySAT & PPCoin developers"
             VALUE "LegalTrademarks1",   "Distributed under the MIT/X11 software license, see the accompanying file COPYING or http://www.opensource.org/licenses/mit-license.php."
-            VALUE "OriginalFilename",   "Mundocoin-qt.exe"
-            VALUE "ProductName",        "Mundocoin-Qt"
+            VALUE "OriginalFilename",   "mySAT-qt.exe"
+            VALUE "ProductName",        "mySAT-Qt"
             VALUE "ProductVersion",     VER_PRODUCTVERSION_STR
         END
     END

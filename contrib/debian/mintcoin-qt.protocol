@@ -1,6 +1,6 @@
 [Protocol]
-exec=mundocoin-qt '%u'
-protocol=mundocoin
+exec=mysat-qt '%u'
+protocol=mysat
 input=none
 output=none
 helper=true

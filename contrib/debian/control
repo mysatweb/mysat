@@ -1,4 +1,4 @@
-Source: mundocoin
+Source: mysat
 Section: utils
 Priority: optional
 Maintainer: Irving A. Bermúdez S. <bigchirv@gmail.com>
@@ -18,15 +18,15 @@ Build-Depends: debhelper,
  libqt4-dev,
  libqrencode-dev
 Standards-Version: 3.9.2
-Homepage: http://mundocoin.cc/
-Vcs-Git: git://github.com/mundocoinproject/mundocoin.git
-Vcs-Browser: http://github.com/mundocoinproject/mundocoin
+Homepage: http://mysat.cc/
+Vcs-Git: git://github.com/mysatproject/mysat.git
+Vcs-Browser: http://github.com/mysatproject/mysat
 
-Package: mundocoind
+Package: mysatd
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: peer-to-peer network based digital currency - daemon
- mundocoin is a free open source peer-to-peer electronic cash system that
+ mysat is a free open source peer-to-peer electronic cash system that
  is completely decentralized, without the need for a central server or
  trusted parties.  Users hold the crypto keys to their own money and
  transact directly with each other, with the help of a P2P network to
@@ -37,14 +37,14 @@ Description: peer-to-peer network based digital currency - daemon
  Full transaction history is stored locally at each client.  This
  requires 2+ GB of space, slowly growing.
  .
- This package provides mundocoind, a combined daemon and CLI tool to
+ This package provides mysatd, a combined daemon and CLI tool to
  interact with the daemon.
 
-Package: mundocoin-qt
+Package: mysat-qt
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: peer-to-peer network based digital currency - Qt GUI
- mundocoin is a free open source peer-to-peer electronic cash system that
+ mysat is a free open source peer-to-peer electronic cash system that
  is completely decentralized, without the need for a central server or
  trusted parties.  Users hold the crypto keys to their own money and
  transact directly with each other, with the help of a P2P network to
@@ -55,4 +55,4 @@ Description: peer-to-peer network based digital currency - Qt GUI
  Full transaction history is stored locally at each client.  This
  requires 2+ GB of space, slowly growing.
  .
- This package provides Mundocoin-Qt, a GUI for mundocoin based on Qt.
+ This package provides mySAT-Qt, a GUI for mysat based on Qt.

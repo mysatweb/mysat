@@ -43,7 +43,7 @@ static CBigNum bnProofOfStakeLimitTestNet(~uint256(0) >> 20);
 
 unsigned int nStakeMinAge = 60 * 60 * 24 * 2;	// minimum age for coin age: 2d
 unsigned int nStakeMaxAge = 60 * 60 * 24 * 100;	// stake age of full weight: -1
-unsigned int nStakeTargetSpacing = 90;			// 90 sec block spacing
+unsigned int nStakeTargetSpacing = 120;			// 120 sec block spacing
 
 int64 nChainStartTime = 1397400948;
 int nCoinbaseMaturity = 15;
@@ -68,7 +68,7 @@ map<uint256, map<uint256, CDataStream*> > mapOrphanTransactionsByPrev;
 // Constant stuff for coinbase transactions we create:
 CScript COINBASE_FLAGS;
 
-const string strMessageMagic = "Mundocoin Signed Message:\n";
+const string strMessageMagic = "mySAT Signed Message:\n";
 
 double dHashesPerSec;
 int64 nHPSTimerStart;
@@ -941,7 +941,7 @@ static const int CUTOFF_HEIGHT = 10000;	// Height at the end of 5 weeks
 // miner's coin base reward based on nBits
 int64 GetProofOfWorkReward(int nHeight, int64 nFees, uint256 prevHash)
 {
-	int64 nSubsidy = 3500000 * COIN;
+	int64 nSubsidy = 6 * COIN;
 
     std::string cseed_str = prevHash.ToString().substr(14,7);
     const char* cseed = cseed_str.c_str();
@@ -1516,8 +1516,8 @@ bool CBlock::ConnectBlock(CTxDB& txdb, CBlockIndex* pindex, bool fJustCheck)
     // Now that the whole chain is irreversibly beyond that time it is applied to all blocks except the
     // two in the chain that violate it. This prevents exploiting the issue against nodes in their
     // initial block download.
-    bool fEnforceBIP30 = true; // Always active in Mundocoin
-    bool fStrictPayToScriptHash = true; // Always active in Mundocoin
+    bool fEnforceBIP30 = true; // Always active in mySAT
+    bool fStrictPayToScriptHash = true; // Always active in mySAT
 
     //// issue here: it doesn't know the version
     unsigned int nTxPos;
@@ -2468,7 +2468,7 @@ bool CheckDiskSpace(uint64 nAdditionalBytes)
         string strMessage = _("Warning: Disk space is low!");
         strMiscWarning = strMessage;
         printf("*** %s\n", strMessage.c_str());
-        uiInterface.ThreadSafeMessageBox(strMessage, "Mundocoin", CClientUIInterface::OK | CClientUIInterface::ICON_EXCLAMATION | CClientUIInterface::MODAL);
+        uiInterface.ThreadSafeMessageBox(strMessage, "mySAT", CClientUIInterface::OK | CClientUIInterface::ICON_EXCLAMATION | CClientUIInterface::MODAL);
         StartShutdown();
         return false;
     }
@@ -2561,7 +2561,7 @@ bool LoadBlockIndex(bool fAllowNew)
             return false;
 
         // Genesis block
-        const char* pszTimestamp = "I get knocked down but I get up again.";
+        const char* pszTimestamp = "mySAT is launching by July 3rd, 2018!";
         CTransaction txNew;
         txNew.nTime = nChainStartTime;
         txNew.vin.resize(1);
@@ -2574,7 +2574,7 @@ bool LoadBlockIndex(bool fAllowNew)
         block.hashPrevBlock = 0;
         block.hashMerkleRoot = block.BuildMerkleTree();
         block.nVersion = 1;
-        block.nTime    = 1526957949;
+        block.nTime    = 1530594458;
         block.nBits    = bnProofOfWorkLimit.GetCompact();
         block.nNonce   = 10848706;
         if (false  && (block.GetHash() != hashGenesisBlock)) {
