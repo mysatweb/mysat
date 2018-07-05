@@ -2574,9 +2574,9 @@ bool LoadBlockIndex(bool fAllowNew)
         block.hashPrevBlock = 0;
         block.hashMerkleRoot = block.BuildMerkleTree();
         block.nVersion = 1;
-        block.nTime    = 1530594458;
+        block.nTime    = 1530748495;
         block.nBits    = bnProofOfWorkLimit.GetCompact();
-        block.nNonce   = 15280722;
+        block.nNonce   = 15289575;
         if (false  && (block.GetHash() != hashGenesisBlock)) {
 
         // This will figure out a valid hash and Nonce if you're
@@ -2599,7 +2599,7 @@ bool LoadBlockIndex(bool fAllowNew)
         printf("block.nTime = %u \n", block.nTime);
         printf("block.nNonce = %u \n", block.nNonce);
 
-        assert(block.hashMerkleRoot == uint256("04ac9a8b5c281a5e373f0c747633afb19d424fc0b9750598c211b9a6740b4ec9"));
+        assert(block.hashMerkleRoot == uint256("0x04ac9a8b5c281a5e373f0c747633afb19d424fc0b9750598c211b9a6740b4ec9"));
 		assert(block.GetHash() == (!fTestNet ? hashGenesisBlock : hashGenesisBlockTestNet));
 
         // Start new block file
