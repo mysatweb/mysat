@@ -941,7 +941,7 @@ static const int CUTOFF_HEIGHT = 10000;	// Height at the end of 5 weeks
 // miner's coin base reward based on nBits
 int64 GetProofOfWorkReward(int nHeight, int64 nFees, uint256 prevHash)
 {
-	int64 nSubsidy = 6 * COIN;
+	int64 nSubsidy = 10 * COIN;
 
     std::string cseed_str = prevHash.ToString().substr(14,7);
     const char* cseed = cseed_str.c_str();
@@ -2574,10 +2574,10 @@ bool LoadBlockIndex(bool fAllowNew)
         block.hashPrevBlock = 0;
         block.hashMerkleRoot = block.BuildMerkleTree();
         block.nVersion = 1;
-        block.nTime    = 1530748495;
+        block.nTime    = 1530759670;
         block.nBits    = bnProofOfWorkLimit.GetCompact();
-        block.nNonce   = 15289575;
-        if (false  && (block.GetHash() != hashGenesisBlock)) {
+        block.nNonce   = 16025969;
+        if (true  && (block.GetHash() != hashGenesisBlock)) {
 
         // This will figure out a valid hash and Nonce if you're
         // creating a different genesis block:
