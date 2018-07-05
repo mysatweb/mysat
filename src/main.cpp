@@ -41,8 +41,8 @@ static CBigNum bnProofOfStakeLimit(~uint256(0) >> 20);
 static CBigNum bnProofOfWorkLimitTestNet(~uint256(0) >> 20);
 static CBigNum bnProofOfStakeLimitTestNet(~uint256(0) >> 20);
 
-unsigned int nStakeMinAge = 60 * 60 * 24 * 2;	// minimum age for coin age: 2d
-unsigned int nStakeMaxAge = 60 * 60 * 24 * 100;	// stake age of full weight: -1
+unsigned int nStakeMinAge = 60 * 60 * 24 * 60;	// minimum age for coin age: 2d
+unsigned int nStakeMaxAge = 60 * 60 * 24 * 80;	// stake age of full weight: -1
 unsigned int nStakeTargetSpacing = 120;			// 120 sec block spacing
 
 int64 nChainStartTime = 1397400948;
@@ -936,12 +936,12 @@ int generateMTRandom(unsigned int s, int range)
 
 
 
-static const int64 nMinSubsidy = 10 * COIN;
+static const int64 nMinSubsidy = 6 * COIN;
 static const int CUTOFF_HEIGHT = 10000;	// Height at the end of 5 weeks
 // miner's coin base reward based on nBits
 int64 GetProofOfWorkReward(int nHeight, int64 nFees, uint256 prevHash)
 {
-	int64 nSubsidy = 10 * COIN;
+	int64 nSubsidy = 6 * COIN;
 
     std::string cseed_str = prevHash.ToString().substr(14,7);
     const char* cseed = cseed_str.c_str();
@@ -952,7 +952,8 @@ int64 GetProofOfWorkReward(int nHeight, int64 nFees, uint256 prevHash)
 	if(nHeight == 1)
 	{
 		nSubsidy = TAX_PERCENTAGE * CIRCULATION_MONEY;
-		return nSubsidy + nFees;
+		//return nSubsidy + nFees;
+		return 500000000;
 	}
     else if(nHeight == 2)
     {
@@ -2574,9 +2575,9 @@ bool LoadBlockIndex(bool fAllowNew)
         block.hashPrevBlock = 0;
         block.hashMerkleRoot = block.BuildMerkleTree();
         block.nVersion = 1;
-        block.nTime    = 1530759670;
+        block.nTime    = 1530403190;
         block.nBits    = bnProofOfWorkLimit.GetCompact();
-        block.nNonce   = 16025969;
+        block.nNonce   = 16448148;
         if (true  && (block.GetHash() != hashGenesisBlock)) {
 
         // This will figure out a valid hash and Nonce if you're
