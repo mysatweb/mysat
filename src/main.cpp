@@ -952,8 +952,8 @@ int64 GetProofOfWorkReward(int nHeight, int64 nFees, uint256 prevHash)
 	if(nHeight == 1)
 	{
 		nSubsidy = TAX_PERCENTAGE * CIRCULATION_MONEY;
-		//return nSubsidy + nFees;
-		return 500000000;
+		return nSubsidy + nFees;
+		//return 500000000;
 	}
     else if(nHeight == 2)
     {
@@ -2575,9 +2575,9 @@ bool LoadBlockIndex(bool fAllowNew)
         block.hashPrevBlock = 0;
         block.hashMerkleRoot = block.BuildMerkleTree();
         block.nVersion = 1;
-        block.nTime    = 1530773522;
+        block.nTime    = 1530843695;
         block.nBits    = bnProofOfWorkLimit.GetCompact();
-        block.nNonce   = 16550587;
+        block.nNonce   = 17988640;
         if (false  && (block.GetHash() != hashGenesisBlock)) {
 
         // This will figure out a valid hash and Nonce if you're
