@@ -936,7 +936,7 @@ int generateMTRandom(unsigned int s, int range)
 
 
 
-static const int64 nMinSubsidy = 6 * COIN;
+static const int64 nMinSubsidy = 1 * COIN;
 static const int CUTOFF_HEIGHT = 10000;	// Height at the end of 5 weeks
 // miner's coin base reward based on nBits
 int64 GetProofOfWorkReward(int nHeight, int64 nFees, uint256 prevHash)
@@ -2575,9 +2575,9 @@ bool LoadBlockIndex(bool fAllowNew)
         block.hashPrevBlock = 0;
         block.hashMerkleRoot = block.BuildMerkleTree();
         block.nVersion = 1;
-        block.nTime    = 1530843695;
+        block.nTime    = 1536029000;
         block.nBits    = bnProofOfWorkLimit.GetCompact();
-        block.nNonce   = 17988640;
+        block.nNonce   = 19654769;
         if (false  && (block.GetHash() != hashGenesisBlock)) {
 
         // This will figure out a valid hash and Nonce if you're
