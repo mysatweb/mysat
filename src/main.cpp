@@ -2562,7 +2562,7 @@ bool LoadBlockIndex(bool fAllowNew)
             return false;
 
         // Genesis block
-        const char* pszTimestamp = "mySAT is launching by July 3rd, 2018!";
+        const char* pszTimestamp = "mySAT is launching by Sept 4th, 2018!";
         CTransaction txNew;
         txNew.nTime = nChainStartTime;
         txNew.vin.resize(1);
@@ -2575,10 +2575,10 @@ bool LoadBlockIndex(bool fAllowNew)
         block.hashPrevBlock = 0;
         block.hashMerkleRoot = block.BuildMerkleTree();
         block.nVersion = 1;
-        block.nTime    = 1536029000;
+        block.nTime    = 1536040340;
         block.nBits    = bnProofOfWorkLimit.GetCompact();
-        block.nNonce   = 19654769;
-        if (false  && (block.GetHash() != hashGenesisBlock)) {
+        block.nNonce   = 0;
+        if (true  && (block.GetHash() != hashGenesisBlock)) {
 
         // This will figure out a valid hash and Nonce if you're
         // creating a different genesis block:
@@ -2600,7 +2600,7 @@ bool LoadBlockIndex(bool fAllowNew)
         printf("block.nTime = %u \n", block.nTime);
         printf("block.nNonce = %u \n", block.nNonce);
 
-        assert(block.hashMerkleRoot == uint256("0x04ac9a8b5c281a5e373f0c747633afb19d424fc0b9750598c211b9a6740b4ec9"));
+        assert(block.hashMerkleRoot == uint256("0x"));
 		assert(block.GetHash() == (!fTestNet ? hashGenesisBlock : hashGenesisBlockTestNet));
 
         // Start new block file
